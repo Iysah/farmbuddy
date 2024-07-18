@@ -15,12 +15,12 @@ import { JSX, SVGProps } from "react"
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-primary text-primary-foreground py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+      <header className="bg-[#a8cf45] text-primary-foreground py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
+        <Link href="#" className="flex items-center gap-2 text-2xl text-[#017744]" prefetch={false}>
           <LeafIcon className="w-6 h-6" />
           <span className="text-xl font-bold">Farmbuddy AI</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 text-[#017744] text-md">
           <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
             Features
           </Link>
@@ -34,11 +34,11 @@ export default function Component() {
             Contact
           </Link>
         </nav>
-        <Button>Sign Up</Button>
+        <Button className="bg-[#009051]">Sign Up</Button>
       </header>
       <main className="flex-1">
 
-        <section className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-16 md:py-24 lg:py-32">
+        <section className="bg-gradient-to-r from-[#009051] to-[#017744] text-primary-foreground py-16 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Revolutionize Your Farming with AI-Powered Plant Care
@@ -47,8 +47,8 @@ export default function Component() {
               Farmbuddy AI provides intelligent solutions to help farmers optimize their crop yields and reduce waste.
             </p>
             <div className="flex justify-center gap-4">
-              <Button>Learn More</Button>
-              <Button variant="outline" className="text-primary">Sign Up</Button>
+              <Button className="bg-[#a8cf45]">Learn More</Button>
+              <Button variant="outline" className="text-[#017744]">Sign Up</Button>
             </div>
           </div>
         </section>
@@ -117,7 +117,7 @@ export default function Component() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button>Get Started</Button>
+                  <Button className="bg-[#017744]">Get Started</Button>
                 </CardFooter>
               </Card>
               <Card className="bg-card p-6 rounded-lg shadow-md">
@@ -148,7 +148,7 @@ export default function Component() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button>Get Started</Button>
+                  <Button className="bg-[#017744]">Get Started</Button>
                 </CardFooter>
               </Card>
               <Card className="bg-card p-6 rounded-lg shadow-md">
@@ -179,7 +179,7 @@ export default function Component() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button>Contact Sales</Button>
+                  <Button className="bg-[#017744]">Contact Sales</Button>
                 </CardFooter>
               </Card>
             </div>
@@ -271,7 +271,7 @@ export default function Component() {
                 </form>
               </CardContent>
               <CardFooter>
-                <Button>Submit</Button>
+                <Button className="bg-[#017744]">Submit</Button>
               </CardFooter>
             </Card>
           </div>
