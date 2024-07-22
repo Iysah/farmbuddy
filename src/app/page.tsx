@@ -11,16 +11,19 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { JSX, SVGProps } from "react"
+import JoinFarmBuddy from "@/components/ui/join"
+import OurImpact from "@/components/ui/ourImpact"
+import ContactSection from "@/components/ui/contact"
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-[#a8cf45] text-primary-foreground py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-2 text-2xl text-[#017744]" prefetch={false}>
+      <header className="bg-gradient-to-r from-[#009051] to-[#017744] text-primary-foreground py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
+        <Link href="#" className="flex items-center gap-2 text-2xl text-[#fff]" prefetch={false}>
           <LeafIcon className="w-6 h-6" />
           <span className="text-xl font-bold">Farmbuddy AI</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-[#017744] text-md">
+        <nav className="hidden md:flex items-center gap-6 text-[#fff] text-md">
           <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
             Features
           </Link>
@@ -34,7 +37,7 @@ export default function Component() {
             Contact
           </Link>
         </nav>
-        <Button className="bg-[#009051]">Sign Up</Button>
+        <Button className="bg-[#009051]">Get Started</Button>
       </header>
       <main className="flex-1">
 
@@ -186,6 +189,9 @@ export default function Component() {
           </div>
         </section>
 
+        {/* ================= Our Impact ================== */}
+        <OurImpact />
+
         {/*  */}
         <section id="testimonials" className="py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
@@ -249,8 +255,11 @@ export default function Component() {
           </div>
         </section>
 
+        {/* ================ Join us today ================ */}
+        <JoinFarmBuddy />
+
         {/*  */}
-        <section id="contact" className="bg-muted py-12 md:py-16 lg:py-20">
+        {/* <section id="contact" className="bg-muted py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">Get in Touch</h2>
             <Card className="bg-card p-6 rounded-lg shadow-md">
@@ -275,7 +284,9 @@ export default function Component() {
               </CardFooter>
             </Card>
           </div>
-        </section>
+        </section> */}
+
+        <ContactSection />
       </main>
 
       {/*  */}
