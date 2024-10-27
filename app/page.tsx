@@ -3,42 +3,24 @@
  * @see https://v0.dev/t/X6xKqsTBhfi
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "./components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./components/ui/card"
+import { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar"
 import { JSX, SVGProps } from "react"
-import JoinFarmBuddy from "@/components/ui/join"
-import OurImpact from "@/components/ui/ourImpact"
-import ContactSection from "@/components/ui/contact"
+import JoinFarmBuddy from "./components/ui/join"
+import OurImpact from "./components/ui/ourImpact"
+import ContactSection from "./components/ui/contact"
+import { SunIcon, ThermometerIcon, SearchIcon  } from "lucide-react"
+import dotenv from 'dotenv';
+import Header from "./components/ui/header"
+import Footer from "./components/ui/footer"
+
+dotenv.config();
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-gradient-to-r from-[#009051] to-[#017744] text-primary-foreground py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-2 text-2xl text-[#fff]" prefetch={false}>
-          <LeafIcon className="w-6 h-6" />
-          <span className="text-xl font-bold">Farmbuddy AI</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-6 text-[#fff] text-md">
-          <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-            Features
-          </Link>
-          <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-            Pricing
-          </Link>
-          <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-            Testimonials
-          </Link>
-          <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-            Contact
-          </Link>
-        </nav>
-        <Button className="bg-[#009051]">Get Started</Button>
-      </header>
+      <Header />
       <main className="flex-1">
 
         <section className="bg-gradient-to-r from-[#009051] to-[#017744] text-primary-foreground py-16 md:py-24 lg:py-32">
@@ -87,6 +69,29 @@ export default function Component() {
                   scheduling, inventory tracking, and more.
                 </p>
               </div>
+              <div className="bg-card p-6 rounded-lg shadow-md">
+                <SearchIcon className="w-10 h-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Accurate Plant Recognition</h3>
+                <p className="text-muted-foreground">
+                  With 95% recognition accuracy and identification of over 10,000 plant species, our system offers unlimited identifications along with a personalized care guide.
+                </p>
+              </div>
+              <div className="bg-card p-6 rounded-lg shadow-md">
+                <SunIcon className="w-10 h-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Light Requirement Analysis</h3>
+                <p className="text-muted-foreground">
+                  Discover the ideal light conditions for each plant species, ensuring they thrive with the right amount of sunlight or shade.
+                </p>
+              </div>
+
+              <div className="bg-card p-6 rounded-lg shadow-md">
+                <ThermometerIcon className="w-10 h-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Temperature and Humidity Monitoring</h3>
+                <p className="text-muted-foreground">
+                  Monitor and adjust temperature and humidity levels to create the perfect environment for your plants to grow healthily.
+                </p>
+              </div>
+
             </div>
           </div>
         </section>
@@ -96,18 +101,24 @@ export default function Component() {
           <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">Affordable Pricing for Every Farmer</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              {/* ============== starter ============= */}
               <Card className="bg-card p-6 rounded-lg shadow-md">
                 <CardHeader>
                   <CardTitle>Starter</CardTitle>
                   <CardDescription>Perfect for small farms</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-4xl font-bold mb-2">$19</div>
+                  <div className="text-4xl font-bold mb-2">$-</div>
                   <div className="text-muted-foreground mb-4">per month</div>
                   <ul className="space-y-2 text-left">
                     <li className="">
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
-                      AI-powered disease and pest detection
+                      Unlimited disease and pest detection
+                    </li>
+                    <li className="">
+                      <CheckIcon className="w-5 h-5 mr-2 text-primary" />
+                      Unlimited plant recognition
                     </li>
                     <li>
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
@@ -123,13 +134,15 @@ export default function Component() {
                   <Button className="bg-[#017744]">Get Started</Button>
                 </CardFooter>
               </Card>
+
+              {/* =============== professional =============  */}
               <Card className="bg-card p-6 rounded-lg shadow-md">
                 <CardHeader>
                   <CardTitle>Professional</CardTitle>
                   <CardDescription>Ideal for medium-sized farms</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-4xl font-bold mb-2">$49</div>
+                  <div className="text-4xl font-bold mb-2">$-</div>
                   <div className="text-muted-foreground mb-4">per month</div>
                   <ul className="space-y-2 text-left">
                     <li>
@@ -139,6 +152,10 @@ export default function Component() {
                     <li>
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
                       Personalized watering and fertilization reminders
+                    </li>
+                    <li>
+                      <CheckIcon className="w-5 h-5 mr-2 text-primary" />
+                      Care instructions and watering tips
                     </li>
                     <li>
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
@@ -154,6 +171,8 @@ export default function Component() {
                   <Button className="bg-[#017744]">Get Started</Button>
                 </CardFooter>
               </Card>
+
+              {/* ===================== business ==================== */}
               <Card className="bg-card p-6 rounded-lg shadow-md">
                 <CardHeader>
                   <CardTitle>Enterprise</CardTitle>
@@ -170,6 +189,10 @@ export default function Component() {
                     <li>
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
                       Customized AI models and algorithms
+                    </li>
+                    <li>
+                      <CheckIcon className="w-5 h-5 mr-2 text-primary" />
+                      Care instructions and watering tips
                     </li>
                     <li>
                       <CheckIcon className="w-5 h-5 mr-2 text-primary" />
@@ -290,25 +313,7 @@ export default function Component() {
       </main>
 
       {/*  */}
-      <footer className="bg-muted text-muted-foreground py-8 px-4 md:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <LeafIcon className="w-6 h-6" />
-            <span className="text-xl font-bold">Farmbuddy AI</span>
-          </div>
-          <nav className="flex items-center gap-6">
-            <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-              Terms of Service
-            </Link>
-            <Link href="#" className="hover:underline underline-offset-4" prefetch={false}>
-              Contact Us
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
